@@ -6,11 +6,11 @@ class Config:
     
     # Configuration MongoDB
     MONGODB_URI: str = os.getenv("MONGODB_URI", "mongodb://localhost:27017/")
-    MONGODB_DATABASE: str = os.getenv("MONGODB_DATABASE", "car_database")
-    MONGODB_COLLECTION: str = os.getenv("MONGODB_COLLECTION", "cars")
+    MONGODB_DATABASE: str = os.getenv("MONGODB_DATABASE", "argus")
+    MONGODB_COLLECTION: str = os.getenv("MONGODB_COLLECTION", "used_cars")
     
     # Configuration du modèle ML
-    MODEL_PATH: str = os.getenv("MODEL_PATH", "models/argus_model.joblib")
+    MODEL_PATH: str = os.getenv("MODEL_PATH", "models/rf_pipeline.pkl")
     
     # Configuration API
     API_KEY: str = os.getenv("API_KEY", "api-key")
@@ -18,7 +18,7 @@ class Config:
     API_PORT: int = int(os.getenv("API_PORT", "8000"))
     
     # Configuration de sécurité
-    SECRET_KEY: str = os.getenv("SECRET_KEY", "your-secret-key-here")
+    SECRET_KEY: str = os.getenv("SECRET_KEY", "api-key")
     ACCESS_TOKEN_EXPIRE_MINUTES: int = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", "30"))
     
     # Configuration du logging
@@ -54,7 +54,7 @@ class Config:
             errors["API_KEY"] = "La clé API par défaut est utilisée. Changez-la pour la production."
         
         # Vérifier la clé secrète
-        if cls.SECRET_KEY == "your-secret-key-here":
+        if cls.SECRET_KEY == "api-key":
             errors["SECRET_KEY"] = "La clé secrète par défaut est utilisée. Changez-la pour la production."
         
         # Vérifier la configuration MongoDB
