@@ -1,0 +1,156 @@
+{
+  "database_connection": {
+    "status": "\u2705 PASS",
+    "message": "Database connection successful",
+    "stats": {
+      "total_documents": 206019,
+      "documents_with_price": 143419,
+      "latest_date": "2025-06-20T14:58:27.586400",
+      "collection_name": "used_cars"
+    }
+  },
+  "data_extraction": {
+    "status": "\u2705 PASS",
+    "message": "Data extraction successful",
+    "raw_data_count": 10,
+    "transformed_data_count": 10,
+    "new_data_count": 0,
+    "sample_columns": [
+      "_id",
+      "label",
+      "carUri",
+      "carPrice",
+      "carCity",
+      "carBrand",
+      "carModel",
+      "carFirstHand",
+      "carBV",
+      "carYear",
+      "carMileageMin",
+      "carMileageMax",
+      "datePosted",
+      "source",
+      "carFuel"
+    ],
+    "transformed_columns": [
+      "city",
+      "price",
+      "fuel",
+      "boite_vitesse",
+      "first_hand",
+      "brand_name",
+      "model_name",
+      "model_year",
+      "mileage"
+    ]
+  },
+  "data_transformation": {
+    "status": "\u2705 PASS",
+    "message": "Data transformation successful",
+    "input_shape": [
+      10,
+      15
+    ],
+    "output_shape": [
+      9,
+      9
+    ],
+    "expected_columns": [
+      "city",
+      "fuel",
+      "boite_vitesse",
+      "brand_name",
+      "model_name",
+      "model_year",
+      "mileage",
+      "first_hand"
+    ],
+    "actual_columns": [
+      "city",
+      "price",
+      "fuel",
+      "boite_vitesse",
+      "brand_name",
+      "model_name",
+      "model_year",
+      "mileage",
+      "first_hand"
+    ],
+    "missing_columns": [],
+    "extra_columns": [
+      "price"
+    ]
+  },
+  "model_loading": {
+    "status": "\u2705 PASS",
+    "message": "Model loaded successfully",
+    "model_type": "<class 'sklearn.pipeline.Pipeline'>"
+  },
+  "full_pipeline": {
+    "status": "\u2705 PASS",
+    "message": "Full pipeline execution completed",
+    "pipeline_result": {
+      "status": "success",
+      "total_processed": 5,
+      "predictions_generated": 5,
+      "stats": {
+        "data_shape": [
+          5,
+          9
+        ],
+        "available_columns": [
+          "city",
+          "price",
+          "fuel",
+          "boite_vitesse",
+          "brand_name",
+          "model_name",
+          "model_year",
+          "mileage",
+          "first_hand"
+        ],
+        "prediction_stats": {
+          "count": 5,
+          "mean": 228625.81219596887,
+          "median": 203024.42204749677,
+          "min": 105148.12019301197,
+          "max": 489899.6336156889,
+          "std": 157749.98161962247
+        },
+        "data_stats": {
+          "price": {
+            "mean": 220000.0,
+            "median": 210000.0,
+            "min": 95000.0,
+            "max": 460000.0
+          },
+          "mileage": {
+            "mean": 86000.0,
+            "median": 94000.0,
+            "min": 23000.0,
+            "max": 140000.0
+          },
+          "model_year": {
+            "mean": 2017.0,
+            "median": 2018.0,
+            "min": 2012.0,
+            "max": 2022.0
+          }
+        }
+      }
+    }
+  },
+  "incremental_pipeline": {
+    "status": "\u2705 PASS",
+    "message": "Incremental pipeline execution completed",
+    "pipeline_result": {
+      "status": "info",
+      "message": "Aucune nouvelle donn\u00e9e"
+    }
+  },
+  "field_extraction_debug": {
+    "status": "\u2705 PASS",
+    "message": "Field extraction debug completed",
+    "debug_output": "=== FIELD EXTRACTION DEBUG ===\n\n--- Document 1 ---\ncarCity:\n  Raw: {'_id': ObjectId('64aef205f8e9da0cae1a97b3'), 'label': 'casablanca', 'value': '5', 'translations': {'fr': 'Casablanca', 'ar': '\u0627\u0644\u062f\u0627\u0631 \u0627\u0644\u0628\u064a\u0636\u0627\u0621'}}\n  Extracted: casablanca\n\ncarBV:\n  Raw: {'_id': ObjectId('64b66e7052b46f2c79eb2678'), 'value': 'automatique', 'translations': {'ar': '\u0623\u0648\u062a\u0648\u0645\u0627\u062a\u064a\u0643', 'fr': 'Automatique'}, 'childValeur': []}\n  Extracted: automatique\n\ncarFirstHand:\n  Raw: {'_id': ObjectId('64b66e7052b46f2c79eb2674'), 'value': 'oui', 'translations': {'ar': '\u0646\u0639\u0645', 'fr': 'Oui'}, 'childValeur': []}\n  Extracted: oui\n\ncarBrand:\n  Raw: {'_id': ObjectId('64ae8b221baffb1801d20637'), 'key': '33', 'value': 'land rover', 'translations': {'fr': 'Land Rover', 'ar': '\u0644\u0627\u0646\u062f \u0631\u0648\u06a8\u0631'}, 'childValeur': []}\n  Extracted: land rover\n\ncarModel:\n  Raw: {'_id': ObjectId('64ae8b311baffb1801d208c8'), 'key': 'range_rover_evoque', 'value': 'range rover evoque', 'translations': {'fr': 'Range Rover Evoque', 'ar': '\u0631\u064a\u0646\u062c \u0631\u0648\u0641\u0631 \u0625\u064a\u0641\u0648\u0643'}, 'childValeur': [], ..."
+  }
+}
