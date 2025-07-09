@@ -33,7 +33,7 @@ class DatabaseStats(BaseModel):
 
 class Settings(BaseModel):
     debug: bool = Field(default=False)
-    api_key: str = Field(default="your_api_key_here")
+    api_key: str = Field(default="api-key")
     mongodb_uri: str = Field(default="mongodb://localhost:27017/")
     mongodb_database: str = Field(default="your_database_name")
     mongodb_collection: str = Field(default="used_cars")

@@ -2,8 +2,6 @@
 
 A comprehensive data pipeline and RESTful API for predicting car prices using machine learning. The system extracts data from MongoDB, processes it through an ETL pipeline, and provides real-time predictions via FastAPI.
 
-
-
 ## 📋 Table of Contents
 
 - [Installation](#installation)
@@ -11,7 +9,6 @@ A comprehensive data pipeline and RESTful API for predicting car prices using ma
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
 - [Pipeline Architecture](#pipeline-architecture)
-
 
 ## 🛠️ Installation
 
@@ -24,29 +21,34 @@ A comprehensive data pipeline and RESTful API for predicting car prices using ma
 ### Quick Setup
 
 1. **Clone the repository**
+
 ```bash
 git clone <repository-url>
 cd car-price-prediction-api
 ```
 
 2. **Create virtual environment**
+
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
 3. **Install dependencies**
+
 ```bash
 pip install -r requirements.txt
 ```
 
 4. **Set up MongoDB**
+
 ```bash
 # Make sure MongoDB is running
 mongod --dbpath /path/to/your/db
 ```
 
 5. **Configure environment variables**
+
 ```bash
 cp .env.example .env
 # Edit .env with your configuration
@@ -94,7 +96,7 @@ The API will be available at `http://localhost:8000`
 
 ```bash
 curl -X POST "http://localhost:8000/predict" \
-  -H "X-API-Key: your-api-key" \
+  -H "X-API-Key: api-key" \
   -H "Content-Type: application/json" \
   -d '{
     "city": "casablanca",
@@ -112,47 +114,47 @@ curl -X POST "http://localhost:8000/predict" \
 
 ```bash
 curl -X POST "http://localhost:8000/pipeline/run" \
-  -H "X-API-Key: your-api-key"
+  -H "X-API-Key: api-key"
 ```
 
 ## 📚 API Endpoints
 
 ### Core Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/` | API information and available endpoints |
-| `GET` | `/health` | Health check with component status |
+| Method | Endpoint  | Description                             |
+| ------ | --------- | --------------------------------------- |
+| `GET`  | `/`       | API information and available endpoints |
+| `GET`  | `/health` | Health check with component status      |
 
 ### Prediction Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `POST` | `/predict` | Single car price prediction |
+| Method | Endpoint         | Description                 |
+| ------ | ---------------- | --------------------------- |
+| `POST` | `/predict`       | Single car price prediction |
 | `POST` | `/predict/batch` | Batch predictions (max 100) |
 
 ### Pipeline Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `POST` | `/pipeline/run` | Run complete ETL pipeline |
-| `POST` | `/pipeline/run/incremental` | Process new data only |
-| `GET` | `/pipeline/status` | Get pipeline status |
-| `POST` | `/pipeline/debug` | Debug pipeline execution |
+| Method | Endpoint                    | Description               |
+| ------ | --------------------------- | ------------------------- |
+| `POST` | `/pipeline/run`             | Run complete ETL pipeline |
+| `POST` | `/pipeline/run/incremental` | Process new data only     |
+| `GET`  | `/pipeline/status`          | Get pipeline status       |
+| `POST` | `/pipeline/debug`           | Debug pipeline execution  |
 
 ### Database Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/database/stats` | Database statistics |
-| `GET` | `/database/debug` | Debug database extraction |
+| Method | Endpoint          | Description               |
+| ------ | ----------------- | ------------------------- |
+| `GET`  | `/database/stats` | Database statistics       |
+| `GET`  | `/database/debug` | Debug database extraction |
 
 ### Monitoring Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/metrics` | System metrics |
-| `GET` | `/logs` | Recent logs |
+| Method | Endpoint   | Description    |
+| ------ | ---------- | -------------- |
+| `GET`  | `/metrics` | System metrics |
+| `GET`  | `/logs`    | Recent logs    |
 
 ## 🏗️ Pipeline Architecture
 
@@ -206,14 +208,10 @@ MongoDB → Data Extraction → Data Transformation → ML Prediction → Result
 └── README.md           # This file
 ```
 
-
-
 ### Health Check
 
 Check system health:
+
 ```bash
 curl http://localhost:8000/health
 ```
-
-
-

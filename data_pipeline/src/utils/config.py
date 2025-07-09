@@ -13,7 +13,7 @@ class Config:
     MODEL_PATH: str = os.getenv("MODEL_PATH", "models/argus_model.joblib")
     
     # Configuration API
-    API_KEY: str = os.getenv("API_KEY", "your-secure-api-key-here")
+    API_KEY: str = os.getenv("API_KEY", "api-key")
     API_HOST: str = os.getenv("API_HOST", "0.0.0.0")
     API_PORT: int = int(os.getenv("API_PORT", "8000"))
     
@@ -50,7 +50,7 @@ class Config:
             errors["MODEL_PATH"] = f"Le fichier modèle n'existe pas: {cls.MODEL_PATH}"
         
         # Vérifier la clé API
-        if cls.API_KEY == "your-secure-api-key-here":
+        if cls.API_KEY == "api-key":
             errors["API_KEY"] = "La clé API par défaut est utilisée. Changez-la pour la production."
         
         # Vérifier la clé secrète
