@@ -210,42 +210,6 @@ MongoDB → Data Extraction → Data Transformation → ML Prediction → Result
 
 
 
-
-## 🔍 Troubleshooting
-
-### Common Issues
-
-#### 1. Model Not Loading
-```
-Error: "Modèle non chargé"
-```
-**Solution**: Ensure the model file exists at the specified `MODEL_PATH`
-
-#### 2. MongoDB Connection Error
-```
-Error: "Pipeline non initialisé"
-```
-**Solution**: Check MongoDB connection and ensure the service is running
-
-#### 3. API Authentication Error
-```
-Error: "Clé API invalide"
-```
-**Solution**: Verify the `X-API-Key` header matches your configured API key
-
-#### 4. Data Transformation Issues
-```
-Error: "Aucune donnée après transformation"
-```
-**Solution**: Check data quality and ensure required fields are present
-
-### Debug Mode
-
-Enable debug mode for detailed logging:
-```bash
-DEBUG=true python enhanced_api.py
-```
-
 ### Health Check
 
 Check system health:
@@ -254,13 +218,4 @@ curl http://localhost:8000/health
 ```
 
 
-## 📞 Support
 
-For issues and questions:
-- Check the troubleshooting section
-- Review the logs for error details
-- Use the debug endpoints for pipeline issues
-
----
-
-**Note**: This README assumes you have the necessary trained model and MongoDB setup. Adjust the configuration according to your specific environment and requirements.
