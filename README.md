@@ -11,9 +11,7 @@ A comprehensive data pipeline and RESTful API for predicting car prices using ma
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
 - [Pipeline Architecture](#pipeline-architecture)
-- [Development](#development)
-- [Deployment](#deployment)
-- [Troubleshooting](#troubleshooting)
+
 
 ## 🛠️ Installation
 
