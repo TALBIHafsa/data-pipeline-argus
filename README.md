@@ -61,34 +61,10 @@ cp .env.example .env
 Create a `.env` file in the root directory:
 
 ```env
-# MongoDB Configuration
 MONGODB_URI=mongodb://localhost:27017/
-MONGODB_DATABASE=car_database
-MONGODB_COLLECTION=cars
-
-# Model Configuration
-MODEL_PATH=models/argus_model.joblib
-
-# API Configuration
-API_KEY=api-key
-API_HOST=0.0.0.0
-API_PORT=8000
-
-# Security
-SECRET_KEY=your-secret-key-here
-ACCESS_TOKEN_EXPIRE_MINUTES=30
-
-# Logging
-LOG_LEVEL=INFO
-LOG_FILE=logs/api.log
-
-# Limits
-MAX_BATCH_SIZE=100
-MAX_PIPELINE_RECORDS=10000
-
-# Debug
-DEBUG=false
-TESTING=false
+MONGODB_DATABASE=argus
+MONGODB_COLLECTION=used_cars
+MODEL_PATH=models/rf_pipeline.pkl
 ```
 
 ### Required Model
